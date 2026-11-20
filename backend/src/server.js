@@ -9,7 +9,7 @@ app.disable('x-powered-by');
 app.use(express.json({limit:'16kb'}));
 app.use(cors({origin:false})); // Mobile clients do not require browser CORS.
 const fail = (res,code,message) => res.status(code).json({error:message});
-const isTime = value => typeof value==='string' && /^([01]\\d|2[0-3]):[0-5]\\d$/.test(value);
+const isTime = value => typeof value==='string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(value);
 const validDate = (day,month) => Number.isInteger(day) && Number.isInteger(month) &&
   month>=1 && month<=12 && day>=1 && new Date(2024,month-1,day).getMonth()===month-1 &&
   new Date(2024,month-1,day).getDate()===day;
